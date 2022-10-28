@@ -52,7 +52,7 @@ public class ShopController {
     @Autowired
     private ICartService cartService;
 
-    @ModelAttribute("quantity")
+    @ModelAttribute("/quantity")
     public List<Integer> quantity(){
         List<CartItem> cartItems = cartItemService.findBycarts(currentCart());
         List<Integer> list = new ArrayList();
@@ -61,13 +61,13 @@ public class ShopController {
         }
         return list;
     }
-    @ModelAttribute("count")
+    @ModelAttribute("/count")
     public Integer coutPr() {
         List<CartItem> cartItems = cartItemService.findBycarts(currentCart());
         Integer count = cartItems.size();
         return count;
     }
-    @ModelAttribute("total")
+    @ModelAttribute("/total")
     public Double total() {
         Double total  = 0.0;
         List<CartItem> cartItems = cartItemService.findBycarts(currentCart());
@@ -77,34 +77,34 @@ public class ShopController {
         return total;
     }
 
-    @ModelAttribute("user")
+    @ModelAttribute("/user")
     public AppUser currentUser(){
         return appUserService.getCurrentUser();
     }
 
-    @ModelAttribute("currentCart")
+    @ModelAttribute("/currentCart")
     public Cart currentCart() {
         Cart cart = cartService.findByAppUser(currentUser());
         return cart;
     }
 
-    @ModelAttribute("cartItem")
+    @ModelAttribute("/cartItem")
     public Iterable<Products> cartItem(){
         Iterable<Products> products= productService.findAllByCart(currentCart());
         return products;
     }
 
 
-    @ModelAttribute("category")
+    @ModelAttribute("/category")
     public Iterable<Category> categories(@PageableDefault(size = 3) Pageable pageable) {
         return categoryService.findAll(pageable);
     }
-    @ModelAttribute("categorys")
+    @ModelAttribute("/categorys")
     public Iterable<Category> categories() {
         return categoryService.findAll();
     }
 
-    @ModelAttribute("trademark")
+    @ModelAttribute("/trademark")
     public Iterable<TradeMark> tradeMarks( ) {
         return trademarkService.findAll();
     }
