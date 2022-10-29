@@ -21,7 +21,7 @@
                                 <li><a href="#"><i class="fa fa-map-marker"></i>Địa chỉ</a></li>
                                 <li><a href="#"><i class="fa fa-envelope-o"></i>Email</a></li>
                                 <li><a href="#"><i class="fa fa-facebook-square"></i>FaceBook</a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i>Intagram</a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
                             </ul>
                         </div>
@@ -172,7 +172,7 @@
             </div>
             <div class="col-lg-4" th:if="${user}">
                 <p style="margin: 0; padding: 0; color: white; float:left" th:text="' ' + ${user.full_name}"><a></a></p>
-                <a href="/logout" style="margin: 0; padding: 0; color: white; float: right">Logout</a>
+                <a href="http://localhost:8080/login" style="margin: 0; padding: 0; color: white; float: right">Logout</a>
             </div>
             <div class="col-lg-4" th:if="${user} == null">
                 <a href="/login" style="margin: 0; padding: 0; color: white; float: right">Login</a>
@@ -537,7 +537,7 @@
                 <div class="dropdown profile-element text-center">
                      <span class="text-center">
                      <img alt="image" class="img-thumbnail"
-                          src=""
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Logo_Hust.png/1200px-Logo_Hust.png"
                           style="width: 58px;height: 58px"/>
                      </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -588,6 +588,7 @@
         </ul>
     </div>
 </nav>
+
 <th:block th:fragment="admin-footer">
     <div class="footer" >
         <div class="text-center">
