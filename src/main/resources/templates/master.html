@@ -171,7 +171,7 @@
                 </ul>
             </div>
             <div class="col-lg-4" th:if="${user}">
-                <p style="margin: 0; padding: 0; color: white; float:left" th:text="'Đm ' + ${user.full_name}"><a></a></p>
+                <p style="margin: 0; padding: 0; color: white; float:left" th:text="' ' + ${user.full_name}"><a></a></p>
                 <a href="/logout" style="margin: 0; padding: 0; color: white; float: right">Logout</a>
             </div>
             <div class="col-lg-4" th:if="${user} == null">
@@ -566,11 +566,11 @@
                 </a>
                 <a href="/admin/product/create">
                     <i class="fa fa-plus"></i>
-                    <span class="nav-label">Thêm rượi</span>
+                    <span class="nav-label">Thêm rượu</span>
                 </a>
                 <a href="/admin/category/create">
                     <i class="fa fa-plus"></i>
-                    <span class="nav-label">Thêm loại rượi</span>
+                    <span class="nav-label">Thêm loại rượu</span>
                 </a>
                 <a href="/admin/trademark/">
                     <i class="fa fa-newspaper-o"></i>

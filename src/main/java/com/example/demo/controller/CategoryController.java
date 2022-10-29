@@ -69,7 +69,7 @@ public class CategoryController {
         categoryService.save(category1);
         ModelAndView modelAndView = new ModelAndView("category/create");
         modelAndView.addObject("category", new Category());
-        modelAndView.addObject("message", "Thêm loại rượu mơi thành công !!!");
+        modelAndView.addObject("message", "Thêm loại rượu mới thành công !!!");
         return modelAndView;
     }
 
