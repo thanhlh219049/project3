@@ -35,6 +35,13 @@ public class TrademarkService implements ITrademarkService{
         if (tradeMark == null)  throw new NotFoundException();
         return tradeMark;
     }
+//
+//    @Override
+//    public Optional<TradeMark> findById(Long id){
+//        Optional<TradeMark> tradeMark = trademarkRepository.updateById(id);
+//        return tradeMark;
+//    }
+
 
     @Override
     public void delete(Long id) {

@@ -97,19 +97,19 @@ public class ProductController {
     @PostMapping("/create")
     public ModelAndView postCreate(@ModelAttribute Products product) {
         MultipartFile file1 = product.getProductImage1();
-        MultipartFile file2 = product.getProductImage2();
-        MultipartFile file3 = product.getProductImage3();
-        MultipartFile file4 = product.getProductImage4();
+//        MultipartFile file2 = product.getProductImage2();
+//        MultipartFile file3 = product.getProductImage3();
+//        MultipartFile file4 = product.getProductImage4();
         String image1 = file1.getOriginalFilename();
-        String image2 = file2.getOriginalFilename();
-        String image3 = file3.getOriginalFilename();
-        String image4 = file4.getOriginalFilename();
+//        String image2 = file2.getOriginalFilename();
+//        String image3 = file3.getOriginalFilename();
+//        String image4 = file4.getOriginalFilename();
         String fileUpload = environment.getProperty("upload.path").toString();
         try {
             FileCopyUtils.copy(file1.getBytes(), new File(fileUpload + image1));
-            FileCopyUtils.copy(file2.getBytes(), new File(fileUpload + image2));
-            FileCopyUtils.copy(file3.getBytes(), new File(fileUpload + image3));
-            FileCopyUtils.copy(file4.getBytes(), new File(fileUpload + image4));
+//            FileCopyUtils.copy(file2.getBytes(), new File(fileUpload + image2));
+//            FileCopyUtils.copy(file3.getBytes(), new File(fileUpload + image3));
+//            FileCopyUtils.copy(file4.getBytes(), new File(fileUpload + image4));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -118,9 +118,9 @@ public class ProductController {
         products.setPrice(product.getPrice());
         products.setQuantity(product.getQuantity());
         products.setImage1(image1);
-        products.setImage2(image2);
-        products.setImage3(image3);
-        products.setImage4(image4);
+//        products.setImage2(image2);
+//        products.setImage3(image3);
+//        products.setImage4(image4);
         products.setDescription(product.getDescription());
         products.setCategory(product.getCategory());
         products.setTradeMark(product.getTradeMark());
@@ -149,46 +149,46 @@ public class ProductController {
         products.setCategory(product.getCategory());
         products.setTradeMark(product.getTradeMark());
         MultipartFile file1 = product.getProductImage1();
-        MultipartFile file2 = product.getProductImage2();
-        MultipartFile file3 = product.getProductImage3();
-        MultipartFile file4 = product.getProductImage4();
+//        MultipartFile file2 = product.getProductImage2();
+//        MultipartFile file3 = product.getProductImage3();
+//        MultipartFile file4 = product.getProductImage4();
         String image1;
-        String image2;
-        String image3;
-        String image4;
+//        String image2;
+//        String image3;
+//        String image4;
         if (file1.isEmpty()){
             image1 = products.getImage1();
         }else {
             image1 = file1.getOriginalFilename();
         }
-        if (file2.isEmpty()){
-            image2 = products.getImage2();
-        }else {
-            image2 = file2.getOriginalFilename();
-        }
-        if (file3.isEmpty()){
-            image3 = products.getImage4();
-        }else {
-            image3 = file3.getOriginalFilename();
-        }
-        if (file4.isEmpty()){
-            image4 = products.getImage4();
-        }else {
-            image4 = file4.getOriginalFilename();
-        }
+//        if (file2.isEmpty()){
+//            image2 = products.getImage2();
+//        }else {
+//            image2 = file2.getOriginalFilename();
+//        }
+//        if (file3.isEmpty()){
+//            image3 = products.getImage4();
+//        }else {
+//            image3 = file3.getOriginalFilename();
+//        }
+//        if (file4.isEmpty()){
+//            image4 = products.getImage4();
+//        }else {
+//            image4 = file4.getOriginalFilename();
+//        }
         String fileUpload = environment.getProperty("upload.path").toString();
         try {
             FileCopyUtils.copy(file1.getBytes(), new File(fileUpload + image1));
-            FileCopyUtils.copy(file2.getBytes(), new File(fileUpload + image2));
-            FileCopyUtils.copy(file3.getBytes(), new File(fileUpload + image3));
-            FileCopyUtils.copy(file4.getBytes(), new File(fileUpload + image4));
+//            FileCopyUtils.copy(file2.getBytes(), new File(fileUpload + image2));
+//            FileCopyUtils.copy(file3.getBytes(), new File(fileUpload + image3));
+//            FileCopyUtils.copy(file4.getBytes(), new File(fileUpload + image4));
         } catch (IOException e) {
             e.printStackTrace();
         }
         products.setImage1(image1);
-        products.setImage2(image2);
-        products.setImage3(image3);
-        products.setImage4(image4);
+//        products.setImage2(image2);
+//        products.setImage3(image3);
+//        products.setImage4(image4);
         productService.save(products);
         ModelAndView modelAndView = new ModelAndView("product/update");
         modelAndView.addObject("product", product);
