@@ -87,7 +87,7 @@ public class TrademarkController {
     @PostMapping("/update")
     public ModelAndView postUpdate(@ModelAttribute TradeMark tradeMark) throws NotFoundException {
         TradeMark tradeMark1 = trademarkService.findById(tradeMark.getId()).get();
-        tradeMark.setName(tradeMark.getName());
+        tradeMark1.setName(tradeMark.getName());
         MultipartFile file = tradeMark.getImg();
         String image;
         if (file.isEmpty()){
