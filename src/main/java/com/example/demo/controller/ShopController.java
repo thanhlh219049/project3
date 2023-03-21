@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.enums.NameAppRole;
 import com.example.demo.exeption.NotFoundException;
 import com.example.demo.model.*;
 import com.example.demo.service.IService;
@@ -210,6 +211,7 @@ public class ShopController {
     public ModelAndView createAppUser(@ModelAttribute AppUser user){
         ModelAndView modelAndView= new ModelAndView("user/create");
         AppRole appRole= new AppRole();
+
         appRole.setId((long) 2);
         appRole.setName("ROLE_USER");
         modelAndView.addObject("user", new AppUser());
