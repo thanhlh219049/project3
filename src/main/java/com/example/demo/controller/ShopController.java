@@ -211,6 +211,7 @@ public class ShopController {
     public ModelAndView createAppUser(@ModelAttribute AppUser user){
         ModelAndView modelAndView= new ModelAndView("user/create");
         AppRole appRole= new AppRole();
+
         appRole.setId((long) 2);
         appRole.setName("ROLE_USER");
         modelAndView.addObject("user", new AppUser());

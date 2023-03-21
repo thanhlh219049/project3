@@ -34,17 +34,17 @@ public class Products {
     @Transient
     private MultipartFile productImage1;
 
-//    private String image2;
-//    @Transient
-//    private MultipartFile productImage2;
-//
-//    private String image3;
-//    @Transient
-//    private MultipartFile productImage3;
-//
-//    private String image4;
-//    @Transient
-//    private MultipartFile productImage4;
+    private String image2;
+    @Transient
+    private MultipartFile productImage2;
+
+    private String image3;
+    @Transient
+    private MultipartFile productImage3;
+
+    private String image4;
+    @Transient
+    private MultipartFile productImage4;
 
     @Column(columnDefinition = "longtext")
     private String description;
