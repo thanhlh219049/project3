@@ -1,9 +1,8 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.NameAppRole;
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -17,7 +16,7 @@ public class AppRole implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+//    @Enumerated(EnumType.STRING)
     private String name;
 
     @Override
