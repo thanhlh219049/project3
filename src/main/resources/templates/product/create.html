@@ -16,7 +16,9 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                        <a href="http://localhost:8080/login"><i class="fa fa-sign-out"></i> Logout</a>
+                        <a href="http://localhost:8386/login"><i class="fa fa-sign-out"></i> Logout</a>
+
+
                     </li>
                 </ul>
             </nav>
@@ -128,6 +130,15 @@
                                                             <button type="submit" class="btn btn-success" name="btn_submit">
                                                                 <i class="fa fa-save fa-fw"></i> Lưu lại
                                                             </button>
+                                                        </div>
+                                                        <div style="text-align: center">
+                                                            <button type="button" onclick="quay_lai_trang_truoc()">Quay lại trang trước</button>
+
+                                                            <script>
+                                                                function quay_lai_trang_truoc(){
+                                                                    history.back();
+                                                                }
+                                                            </script>
                                                         </div>
                                                     </form>
                                                 </div>

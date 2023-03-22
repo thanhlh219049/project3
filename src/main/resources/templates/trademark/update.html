@@ -88,12 +88,13 @@
                                                     </form>
                                                 </div>
                                                 <div style="text-align: center">
-                                                    <button type="submit" class="btn btn-success" name="btn_submit">
-                                                        <a href="http://localhost:8080/admin/trademark"><i class="fa fa-sign-out"></i> Quay lại trang trước</a>
-<!--                                                        <a class="btn" th:href="@{/admin/trademark/update/__${trademark.id}__}">-->
-<!--                                                            <i class="glyphicon glyphicon-edit"></i> Quay lại trang trước-->
-<!--                                                        </a>-->
-                                                    </button>
+                                                    <button type="button" onclick="quay_lai_trang_truoc()">Quay lại trang trước</button>
+
+                                                    <script>
+                                                        function quay_lai_trang_truoc(){
+                                                            history.back();
+                                                        }
+                                                    </script>
                                                 </div>
                                                 <!-- kết thúc thêm thủ công -->
                                             </div>
