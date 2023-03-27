@@ -2,7 +2,6 @@ package com.example.demo.milestone2.login;
 
 import com.example.demo.milestone2.login.domain.User;
 
-import java.util.List;
 
 public interface UserService {
     User findByUsername(String username);
