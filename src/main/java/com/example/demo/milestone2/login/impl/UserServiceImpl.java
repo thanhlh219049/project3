@@ -3,15 +3,13 @@ package com.example.demo.milestone2.login.impl;
 import com.example.demo.milestone2.login.UserRepository;
 import com.example.demo.milestone2.login.UserService;
 import com.example.demo.milestone2.login.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
-
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public User findByUsername(String username) {
