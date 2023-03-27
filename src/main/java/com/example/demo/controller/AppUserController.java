@@ -27,6 +27,7 @@ public class AppUserController {
         modelAndView.addObject("user",new AppUser());
         return modelAndView;
     }
+//    phần này cần check lại để add role, hiện chưa add được (có thể cần làm lại logic hoàn toàn mới)
    @PostMapping("/create")
     public ModelAndView createAppUser(@ModelAttribute AppUser user){
         ModelAndView modelAndView= new ModelAndView("user/create");
