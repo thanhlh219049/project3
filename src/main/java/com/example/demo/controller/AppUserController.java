@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.UUID;
+
 @Controller
 @RequestMapping("/user")
 public class AppUserController {
@@ -34,10 +36,9 @@ public class AppUserController {
         AppRole appRole= new AppRole();
         appRole.setId((long) 2);
         appRole.setName("ROLE_USER");
+
+
         user.setRole(appRole);
-        Cart cart= new Cart();
-        cartService.save(cart);
-        user.setCart(cart);
         appUserService.save(user);
         modelAndView.addObject("user", new AppUser());
         return modelAndView;
