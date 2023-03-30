@@ -67,6 +67,5 @@ public class AppUser {
         this.password = password;
     }
 
-    public void setCart(Cart cart) {
-          }
+
 }

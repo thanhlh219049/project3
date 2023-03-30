@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.UUID;
+
 @Controller
 @RequestMapping("/user")
 public class AppUserController {
@@ -27,16 +29,16 @@ public class AppUserController {
         modelAndView.addObject("user",new AppUser());
         return modelAndView;
     }
+//    phần này cần check lại để add role, hiện chưa add được (có thể cần làm lại logic hoàn toàn mới)
    @PostMapping("/create")
     public ModelAndView createAppUser(@ModelAttribute AppUser user){
         ModelAndView modelAndView= new ModelAndView("user/create");
         AppRole appRole= new AppRole();
         appRole.setId((long) 2);
         appRole.setName("ROLE_USER");
+
+
         user.setRole(appRole);
-        Cart cart= new Cart();
-        cartService.save(cart);
-        user.setCart(cart);
         appUserService.save(user);
         modelAndView.addObject("user", new AppUser());
         return modelAndView;

@@ -48,7 +48,10 @@ public class ProductController {
     }
 
     @GetMapping("")
-    public ModelAndView getList(@RequestParam(value = "name",required = false,defaultValue = "") String name,@RequestParam(value = "category",required = false, defaultValue = "") String category,@RequestParam(value = "tradeMark",required = false,defaultValue = "") String tradeMark, @PageableDefault(size = 10) Pageable pageable) throws NotFoundException {
+    public ModelAndView getList(@RequestParam(value = "name",required = false,defaultValue = "") String name,
+                                @RequestParam(value = "category",required = false, defaultValue = "") String category,
+                                @RequestParam(value = "tradeMark",required = false,defaultValue = "") String tradeMark,
+                                @PageableDefault(size = 10) Pageable pageable) throws NotFoundException {
         Page<Products> products;
         Long cat_id = null;
         Long trade_id = null;

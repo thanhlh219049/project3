@@ -3,6 +3,7 @@ package com.example.demo.milestone2.login.impl;
 import com.example.demo.milestone2.login.UserRepository;
 import com.example.demo.milestone2.login.UserService;
 import com.example.demo.milestone2.login.domain.User;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User login(String username, String password) {
         // Logic for logging in a user
-        return userRepository.findByUsernameAndPassword(username, password);
+        Object checkData = userRepository.findByUsernameAndPassword(username, password);
+        if (checkData != null) {
+            return userRepository.findByUsernameAndPassword(username, password);
+        }else {
+            throw new RuntimeException("Data null");
+        }
     }
 
     @Override
