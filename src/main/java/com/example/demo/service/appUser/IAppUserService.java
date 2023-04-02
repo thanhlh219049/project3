@@ -8,4 +8,5 @@ public interface IAppUserService extends IService<AppUser> {
     AppUser getUserByName(String name);
     AppUser getCurrentUser();
 
+
 }
