@@ -7,6 +7,8 @@ import com.example.demo.model.Cart;
 import com.example.demo.service.appUser.IAppUserService;
 import com.example.demo.service.cart.ICartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +25,9 @@ public class AppUserController {
     private IAppUserService appUserService;
     @Autowired
     private ICartService cartService;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
     @GetMapping("/create")
     public ModelAndView createUser(){
         ModelAndView modelAndView= new ModelAndView("user/create");
@@ -41,6 +46,19 @@ public class AppUserController {
         user.setRole(appRole);
         appUserService.save(user);
         modelAndView.addObject("user", new AppUser());
+        return modelAndView;
+    }
+    @GetMapping("/login")
+    public ModelAndView loginshop(@ModelAttribute AppUser user) {
+        ModelAndView modelAndView = new ModelAndView("/user/login");
+
+        String name = user.getUsername();
+        AppUser check = appUserService.getUserByName(name);
+        if (check == null){
+            modelAndView.addObject("nullData", new AppUser());
+        }
+
+        modelAndView.addObject("appuser", new AppUser());
         return modelAndView;
     }
    }
